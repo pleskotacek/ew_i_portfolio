@@ -1,1 +1,131 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
+<style>
+    * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', Arial, sans-serif;}
+    body { background-color: #1b0a2a; color: #fff; }
+    nav { display: flex; justify-content: space-between; padding: 20px 50px; background: rgba(20, 0, 40, 0.85); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000; }
+    nav .logo { font-weight: bold; color: #ff99ff; font-size: 1.6rem; letter-spacing: 1px; }
+    nav a { color: #fff; text-decoration: none; margin-left: 20px; font-weight: 600; position: relative; transition: color 0.3s; }
+    nav a::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 2px; background: #ff99ff; transition: width 0.3s; }
+    nav a:hover { color: #ff99ff; }
+    nav a:hover::after { width: 100%; }
+    header { display: flex; align-items: center; justify-content: space-around; padding: 120px 50px; background: linear-gradient(135deg, #4a0aff, #b85cff); scroll-margin-top: 80px; }
+    header .intro { max-width: 600px; text-align: center; }
+    header .intro h1 { font-size: 2.8rem; margin-bottom: 20px; line-height: 1.3; }
+    header .intro h1 span { color: #ff99ff; }
+    header .intro button { padding: 12px 30px; background: #ff99ff; color: #1a001a; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; transition: background 0.3s, transform 0.2s; }
+    header .intro button:hover { background: #e066ff; transform: scale(1.05); }
+    header img { border-radius: 50%; max-width: 280px; margin-top: 30px; border: 5px solid #ff99ff; box-shadow: 0 0 25px rgba(255,153,255,0.6); }
+    main { max-width: 1400px; margin: auto; }
+    section { padding: 80px 50px; scroll-margin-top: 80px; }
+    section h2 { font-size: 3rem; font-weight: bold; margin-bottom: 40px; color: #ff99ff; text-align: center; }
+    #about p { font-size: 1.4rem; font-weight: 500; line-height: 2; }
+    #skills div { display:flex;flex-wrap:wrap;gap:40px; justify-content:center; }
+    #skills div > div { background: rgba(255,153,255,0.1); padding:35px; border-radius:20px; width:650px; box-shadow: 0 4px 20px rgba(255,153,255,0.2); transition: transform 0.3s, box-shadow 0.3s; font-size: 1.6rem; font-weight: 700; }
+    #skills div > div:hover { transform: translateY(-5px); box-shadow: 0 6px 25px rgba(255,153,255,0.4); }
+    #skills h3 { color: #ff99ff; margin-bottom: 20px; text-align: center; font-size: 2.2rem; font-weight: bold; }
+    #skills ul { list-style-type: disc; padding-left: 25px; color: #fff; line-height: 2; font-weight: 600; font-size: 1.3rem; }
+    #pricing ul { list-style-type: none; padding-left: 0; line-height: 2; font-size: 1.4rem; font-weight: 600; text-align: center; }
+    form { display: flex; flex-direction: column; gap: 15px; background: rgba(255,153,255,0.05); padding: 30px; border-radius: 15px; box-shadow: 0 4px 20px rgba(255,153,255,0.2); max-width: 600px; margin: auto; }
+    form label { display: flex; flex-direction: column; font-weight: bold; color: #fff; }
+    form input, form textarea { padding: 12px; border-radius: 8px; border: 1px solid #ff99ff; margin-top: 5px; font-size: 1rem; background: rgba(255,255,255,0.05); color: #fff; }
+    form input::placeholder, form textarea::placeholder { color: rgba(255,255,255,0.6); }
+    form button { padding: 12px 25px; background-color: #ff99ff; color: #1a001a; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; font-weight: bold; transition: background 0.3s, transform 0.2s; }
+    form button:hover { background-color: #e066ff; transform: scale(1.05); }
+    footer { text-align: center; padding: 50px; background: rgba(20, 0, 40, 0.85); color: #ff99ff; }
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">ew_i</div>
+    <div class="menu">
+        <a href="#intro">Úvod</a>
+        <a href="#about">O mně</a>
+        <a href="#skills">Moje dovednosti</a>
+        <a href="#pricing">Ceník</a>
+        <a href="#contact">Kontakt</a>
+    </div>
+</nav>
+
+<header id="intro">
+    <div class="intro">
+        <h1>Ahoj, jsem <span>ew_i</span><br>Web programátor & Manažer týmové komunikace</h1>
+        <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Kontaktujte mě</button>
+    </div>
+    <img src="https://via.placeholder.com/300" alt="ew_i">
+</header>
+
+<main>
+    <section id="about">
+        <h2>O mně</h2>
+        <p>Jsem ew_i, web programátor a tvůrce moderních a funkčních webových řešení. Kromě své profesní práce se aktivně věnuji herním serverům, kde působím jako manažer týmové komunikace a staff koordinátor – zajišťuji hladnou spolupráci a efektivní komunikaci mezi helpery a celým týmem. Kombinuji technické dovednosti s organizačními schopnostmi, abych vytvářel nejen krásné weby, ale i dobře fungující herní prostředí.</p>
+    </section>
+
+    <section id="skills">
+        <h2>Moje dovednosti</h2>
+        <div>
+            <div>
+                <h3>Web design & programování</h3>
+                <ul>
+                    <li>Moderní webové stránky s HTML a CSS</li>
+                    <li>Responzivní design pro mobil a desktop</li>
+                    <li>Optimalizace UX/UI</li>
+                    <li>Zkušenosti s frameworky a šablonami</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Herní servery & týmová práce</h3>
+                <ul>
+                    <li>Manažer týmové komunikace a koordinátor staffu</li>
+                    <li>Organizace práce helperů a týmu</li>
+                    <li>Efektivní komunikace a řešení konfliktů</li>
+                    <li>Správa herních portálů a serverů</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing">
+        <h2>Ceník služeb</h2>
+        <ul>
+            <li><strong>Tvorba webů</strong></li>
+            <li>Portfolio web – 250 Kč</li>
+            <li>Web s 1–4 kategoriemi/stránkami – 350 Kč</li>
+            <li>Web s 5–8 kategoriemi/stránkami – 500 Kč</li>
+            <li>Větší web (8+ stránek) – od 600 Kč</li>
+            <li>Custom web – cena dle domluvy</li>
+            <br>
+            <li><strong>Konzultace & týmová komunikace</strong></li>
+            <li>Pomoc s komunikací a vedením týmu – 200–300 Kč (dle rozsahu)</li>
+            <li>Větší projekty a dlouhodobá spolupráce – cena dle domluvy</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Kontakt</h2>
+        <form action="https://formspree.io/f/xqalnorl" method="POST">
+            <label>
+                Váš email:
+                <input type="email" name="email" required placeholder="example@email.com">
+            </label>
+            <label>
+                Vaše zpráva:
+                <textarea name="message" rows="5" required placeholder="Vaše zpráva..."></textarea>
+            </label>
+            <button type="submit">Odeslat</button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    &copy; 2025 ew_i | Všechna práva vyhrazena
+</footer>
+
+</body>
+</html>
 
